@@ -26,7 +26,7 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-      - uses: yehudah/remind-the-reviewers
+      - uses: yehudah/remind-the-reviewers@v1.0.0
         with:
           # Remind every 1 hour
           interval: 1
