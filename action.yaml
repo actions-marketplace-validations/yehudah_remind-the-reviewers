@@ -1,0 +1,24 @@
+name: "Remind The Reviewers"
+author: "Yehuda Hassine"
+branding:
+  icon: 'at-sign'  
+  color: 'green'
+
+description: "Remind the reviewers in charge to review your code. The remind will be by mention them in the PR in the interval you provided."
+
+inputs:
+  github-token:
+    description: The GitHub token used to create an authenticated client. Defaults to github provided token.
+    required: false
+    default: ${{ github.token }}
+  interval:
+    description: "Remind interval in ms, default is every 24h from PR creation time."
+    required: false
+    default: 24
+
+outputs:
+  time:
+    description: "The last time I remind them."
+runs:
+  using: "node16"
+  main: "dist/index.js"
